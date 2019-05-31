@@ -1,0 +1,152 @@
+/* 
+This version of css is for studying, so there are some explaining comments.
+
+Rutorial from TraversyMedia: https://www.youtube.com/watch?v=P7t13SGytRk&feature=em-uploademail 
+*/
+
+/* using css variables for storing colors */
+:root {
+  --primary-color: #e50914;
+}
+
+* {
+  box-sizing: border-box; /* width includes border */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased; /* only for safary/chrome */
+  background: #000;
+  color: #999;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4 {
+  color: #fff;
+}
+
+a{
+  color: #fff;
+  text-decoration: none;
+}
+
+/*
+  1rem is a length relative to html root element. 16px by default.
+  If fontsize of root element is changed, the rem unit so.
+*/
+p {
+  margin: 0.5rem 0;
+}
+
+img{
+  width: 100%;
+}
+
+/* --- */
+
+.showcase{
+  width: 100%;
+  height: 93vh;
+  position: relative;
+  background: url('../img/showcase-bg.jpg') no-repeat center center/cover;
+}
+
+/* creates an element inside showcase. */
+/* same position of parent element */
+/* same size of parent element */
+/* black and transparent for oppacity effect and make text clear */
+/* zindex play */
+/* add shadow to left and top (left, top, gradient)*/
+.showcase::after{
+  content: '';
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  z-index: 1;
+  background: rgba(0,0,0, 0.6);
+  box-shadow: inset 120px 100px 250px #000; /* , inset -120px -100px 250px #000; append for make shadow in right/bottom too*/
+}
+
+.showcase-top{
+  position: relative;
+  height: 90px;
+  z-index: 2;
+}
+.showcase-top img{
+  width: 170px;
+  position: absolute;
+  top: 50%;  /* put start point in the middle */
+  left: 50%; 
+  transform: translate(-50%, -50%); /* put the center in the middle */
+}
+.showcase-top a {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+
+.showcase-content{
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 5rem;
+  z-index: 2;
+}
+.showcase-content h1{
+  font-weight: 700;
+  font-size: 5.2rem;
+  line-height: 1.1;
+  margin: 0 0 2rem;
+}
+.showcase-content p{
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 1.2;
+  margin: 0 0 2rem;
+}
+
+/* Buttons style */
+.btn{
+  display: inline-block; /* element sits next to other and  its padding/margin will be respected*/
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  outline: none; /* outline wrap the element != border */
+  box-shadow: 0 1px 0 rgba(0,0,0, 0.45);
+  border-radius: 2px;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+.btn-rounded {
+  border-radius: 5px;
+}
+.btn-xl{
+  font-size: 2rem;
+  padding: 1.5rem 2.1rem;
+  text-transform: uppercase;
+}
+.btn-lg{
+  font-size: 1rem;
+  padding: 0.8rem 1.3rem;
+  text-transform: uppercase;
+}
