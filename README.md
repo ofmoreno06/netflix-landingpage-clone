@@ -4,4 +4,4 @@ This excersise is done for practicing html, css, js; following the [tutorial](ht
 
 Some interesting things on css like variables, flexbox are used. 
 
-next work continues in 35:18 in tutorial.
+next work continues in 1:11:30 in tutorial.
