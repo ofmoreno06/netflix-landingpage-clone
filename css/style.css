@@ -152,6 +152,9 @@ img{
   padding: 0.8rem 1.3rem;
   text-transform: uppercase;
 }
+.btn .btn-icon{
+  margin-left: 1rem;
+}
 
 /* CONTAINER */
 .container{
@@ -243,12 +246,13 @@ img{
 }
 
 /* TAB CONTENT */
+/* hide tabs content at start */
+#tab-1-content, #tab-2-content, #tab-3-content{ 
+  display: none;
+}
 .tab-content{
   padding: 3rem 0;
   background: #000;
-}
-#tab-1-content, #tab-2-content { /* hide for while coding tab-2 */
-  display: none;
 }
 #tab-1-content .tab-1-content-inner{
   display: grid;
@@ -257,6 +261,10 @@ img{
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.show {
+  display: block !important;
 }
 
 #tab-2-content .tab-2-content-top{
@@ -297,4 +305,117 @@ img{
 }
 .footer li{
   line-height: 1.9;
+}
+
+/* medium screens */
+@media(max-width: 960px){
+  .showcase {
+    height: 70vh;
+  }
+
+  .hide-sm {
+    display: none;
+  }
+
+  .showcase-top img{
+    top: 30%;
+    left: 5%;
+    transform: translate(0);
+  }
+
+  .showcase-content h1{
+    font-size: 3.7rem;
+    line-height: 1;
+  }
+
+  .showcase-content p {
+    font-size: 1.5rem;
+  }
+
+  .footer .footer-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* utils resizing */
+  .btn-xl{
+    font-size: 1.5rem;
+    padding: 1.4rem 2rem;
+  }
+  .text-xl{
+    font-size: 1.5rem;
+  }
+  .text-lg{
+    font-size: 1.3rem;
+  }
+  .text-md{
+    font-size: 1rem;
+  }
+}
+
+/* small screens */
+@media(max-width: 700px){
+  .showcase::after{
+    box-shadow: inset 60px 50px 125px #000; /* , inset -120px -100px 250px #000; append for make shadow in right/bottom too*/
+  }
+
+  #tab-1-content .tab-1-content-inner{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  #tab-2-content .tab-2-content-top{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  #tab-2-content .tab-2-content-bottom{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  #tab-3-content .tab-3-content-top{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+}
+
+/* xs screens */
+@media(max-width: 700px){
+  .showcase-content h1{
+    font-size: 2.5rem;
+  }
+  .showcase-content p{
+    font-size: 1.1rem;
+  }
+  .showcase-top img {
+    width: 30%;
+  }
+  .showcase-top a {
+    transform: translate(-0%, -50%);
+    right: 3%;
+  }
+  /* utils resizing */
+  .btn-xl{
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+  }
+  .text-xl{
+    font-size: 1.1rem;
+  }
+  .text-lg{
+    font-size: 0.9rem;
+  }
+  .text-md{
+    font-size: 0.6rem;
+  }
+  .container{
+    max-width: 90%;
+  }
+  .table tbody tr td{
+    padding: 0.8rem 0.5rem;
+  }
+  .tab-content .container{
+    max-width: 100%;
+  }
 }
